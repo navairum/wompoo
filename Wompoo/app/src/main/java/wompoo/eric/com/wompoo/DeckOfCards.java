@@ -40,6 +40,12 @@ public class DeckOfCards {
         }
     }
 
+    public Card getCard(){
+        Card card = this.cards.get(0);
+        this.cards.remove(0);
+        return card;
+    }
+
     public void shuffle(){
         Collections.shuffle(this.cards);
     }

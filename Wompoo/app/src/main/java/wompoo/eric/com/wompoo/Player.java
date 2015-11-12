@@ -1,5 +1,7 @@
 package wompoo.eric.com.wompoo;
 
+import java.util.List;
+
 /**
  * Created by Eric on 11/11/2015.
  */
@@ -8,7 +10,7 @@ public class Player {
     private String name;
     private int playerNumber;
     private int teamId;
-    private Card cards[];
+    private List<Card> cards;
     private boolean isDealer;
 
     public Player() {
@@ -42,11 +44,11 @@ public class Player {
         return this.playerNumber;
     }
 
-    public void setCards(Card cards[]) {
+    public void setCards(List<Card> cards) {
         this.cards = cards;
     }
 
-    public Card[] getCards(){
+    public List<Card> getCards(){
         return this.cards;
     }
 

@@ -39,6 +39,7 @@ public class Game {
         //4 player wompoo card numbers per deal: 5,5,4 = 56 cards (out of 58 total)
         for(Player player : players){
             int cardsToDeal = 0;
+            List cards = new ArrayList<Card>();
             switch(this.dealNumber) {
                 case 3:
                     cardsToDeal = 4;
@@ -47,6 +48,10 @@ public class Game {
                     cardsToDeal = 5;
                     break;
             }
+            for(int i = 0; i< cardsToDeal; i++){
+                cards.add(this.deck.getCard());  //getCard function should remove that card from the deck. TODO verify the card gets removed from deck and added to players hand
+            }
+            player.setCards(cards);
         }
         this.dealNumber++;
 
