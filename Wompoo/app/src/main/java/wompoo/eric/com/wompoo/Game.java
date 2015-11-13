@@ -1,5 +1,7 @@
 package wompoo.eric.com.wompoo;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -23,6 +25,14 @@ public class Game {
         this.playerNames = playerNames;
         this.currentDealer = 1;
         setupGame();
+        debug();
+    }
+
+    public void debug(){
+        for(int i =0; i<numPlayers; i++){
+            Log.i("DEBUG","name: " + this.players.get(i).getName());
+            Log.i("DEBUG","playernumber: " + this.players.get(i).getPlayerNumber());
+            Log.i("DEBUG", "teamId: " + this.players.get(i).getTeamId());        }
     }
 
     public void setupGame(){
@@ -69,11 +79,11 @@ public class Game {
     }
     public void setupPlayers(){
         this.players = new ArrayList<Player>();
-        for(int i =1;i<=this.numPlayers;i++){
+        for(int i =0;i<this.numPlayers;i++){
             Player player = new Player();
             player.setName(playerNames[i]);
             player.setPlayerNumber(i);
-            if(i <=2){
+            if(i <2){
                 player.setTeamId(1);
             } else {
                 player.setTeamId(2);
