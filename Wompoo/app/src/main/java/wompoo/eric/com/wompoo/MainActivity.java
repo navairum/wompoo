@@ -1,9 +1,13 @@
 package wompoo.eric.com.wompoo;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -14,10 +18,26 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         //Setup a fresh deck
-        int numPlayers = 4; //TODO change this to selectable value
-        String playerNames[] = {"Eric", "Weeks", "Dilello", "Duker"};
-        Game game = new Game(numPlayers, playerNames);
 
+
+        Button clickButton = (Button) findViewById(R.id.startButton);
+        clickButton.setOnClickListener( new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                int numPlayers = 4; //TODO change this to selectable value
+                String playerNames[] = {"Eric", "Weeks", "Dilello", "Duker"};
+                Game game = new Game(numPlayers, playerNames);
+                Intent intent = new Intent(getApplicationContext(),
+                        GameBoard.class);
+
+                intent.putExtra("numPlayers",numPlayers);
+                intent.putExtra("playerNames",playerNames);
+
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

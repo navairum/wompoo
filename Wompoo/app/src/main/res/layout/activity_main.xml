@@ -20,4 +20,13 @@
         android:spinnerMode="dropdown"
         android:entries="@array/numPlayers" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Game"
+        android:id="@+id/startButton"
+        android:layout_below="@+id/numPlayersSlct"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="93dp" />
+
 </RelativeLayout>
