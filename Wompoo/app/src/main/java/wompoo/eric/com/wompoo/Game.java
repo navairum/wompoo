@@ -53,6 +53,7 @@ public class Game {
     public void dealCards(){
 
         if(this.dealNumber == 1){
+            this.deck = new DeckOfCards();  //start with a fresh deck
             Shuffle();
         }
         //4 player wompoo card numbers per deal: 5,5,4 = 56 cards (out of 58 total)

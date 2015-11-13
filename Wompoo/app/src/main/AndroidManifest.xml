@@ -18,7 +18,8 @@
         </activity>
         <activity
             android:name=".GameBoard"
-            android:label="@string/title_activity_game_board" >
+            android:label="@string/title_activity_game_board"
+            >
         </activity>
     </application>
 
