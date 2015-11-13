@@ -34,13 +34,15 @@ public class DeckOfCards {
 
             rank = i - offset;
             if(rank == 0){
-                rank = 13; //14 = ace, 13 king, 12 queen ,11 jack
+                rank = 13; //15 joker, 14 = ace, 13 king, 12 queen ,11 jack
             }
 
             Card card = new Card(suit,rank); //Instantiate a Card
             this.cards.add(card); //Adding card to the Deck
         }
-
+        Card card = new Card("Joker",15); //Instantiate a Card
+        this.cards.add(card); //Adding a joker to the deck
+        this.cards.add(card);//Adding a second joker to the deck
     }
 
     public Card getCard(){
