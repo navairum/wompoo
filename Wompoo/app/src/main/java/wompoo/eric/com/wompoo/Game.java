@@ -32,7 +32,12 @@ public class Game {
         for(int i =0; i<numPlayers; i++){
             Log.i("DEBUG","name: " + this.players.get(i).getName());
             Log.i("DEBUG","playernumber: " + this.players.get(i).getPlayerNumber());
-            Log.i("DEBUG", "teamId: " + this.players.get(i).getTeamId());        }
+            Log.i("DEBUG", "teamId: " + this.players.get(i).getTeamId());
+            List<Card> cards =  this.players.get(i).getCards();
+            for(int t =0; t< cards.size(); t++){
+                Log.i("DEBUG - CARD","Suit: " + (cards.get(t).getSuit()) + "     Rank: " +(cards.get(t).getRank()));
+            }
+        }
     }
 
     public void setupGame(){
@@ -46,6 +51,10 @@ public class Game {
         //if end of round start new deal.  flag new player as dealer based on seating arrangement. change deal order (who the first card goes to).
     }
     public void dealCards(){
+
+        if(this.dealNumber == 1){
+            Shuffle();
+        }
         //4 player wompoo card numbers per deal: 5,5,4 = 56 cards (out of 58 total)
         for(Player player : players){
             int cardsToDeal = 0;
