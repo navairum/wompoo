@@ -1,5 +1,7 @@
 package wompoo.eric.com.wompoo;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -17,27 +19,28 @@ public class DeckOfCards {
             int rank = 0;
             int offset = 0;
 
-            if(i<15){
+            if(i<13){
                 suit = "Spades";
-            } else if(i >= 15 && i < 29){
+            } else if(i >= 13 && i < 26){
                 suit = "Clubs";
-                offset = 14;
-            } else if(i >= 29 && i < 44){
+                offset = 13;
+            } else if(i >= 26 && i < 39){
                 suit = "Diamonds";
-                offset = 28;
+                offset = 26;
             } else {
                 suit = "Hearts";
-                offset = 42;
+                offset = 39;
             }
-            if(i % 14 == 0){
-                rank = 1;
-            } else{
-                rank = i - offset;
+
+            rank = i - offset;
+            if(rank == 0){
+                rank = 13; //14 = ace, 13 king, 12 queen ,11 jack
             }
 
             Card card = new Card(suit,rank); //Instantiate a Card
             this.cards.add(card); //Adding card to the Deck
         }
+
     }
 
     public Card getCard(){
