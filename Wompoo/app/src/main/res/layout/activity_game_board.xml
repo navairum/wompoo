@@ -176,25 +176,49 @@
             android:gravity="center"
             >
             <LinearLayout
+                android:layout_width="fill_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                >
+                <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                    android:gravity="left"
+                android:id="@+id/bluecards"
                 >
                 <ImageButton
-                    android:id="@+id/whitecard2"
+                    android:id="@+id/bluecard1"
                     android:background="@null"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/clubs2"
                     />
                 <ImageButton
-                    android:id="@+id/whitecard"
+                    android:id="@+id/bluecard2"
                     android:background="@null"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/clubs1"
+                    />
+                </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:id="@+id/blackcards"
+                >
+                <ImageButton
+                    android:id="@+id/blackcard1"
+                    android:background="@null"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <ImageButton
+                    android:id="@+id/blackcard2"
+                    android:background="@null"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     />
             </LinearLayout>
+        </LinearLayout>
         </TableRow>
         <TableRow
             android:id="@+id/bottomRow"
@@ -209,21 +233,44 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                ><LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:id="@+id/whitecards"
                 >
                 <ImageButton
-                    android:id="@+id/blackcard"
+                    android:id="@+id/whitecard1"
                     android:background="@null"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/diamonds1"
                     />
                 <ImageButton
-                    android:id="@+id/blackcard2"
+                    android:id="@+id/whitecard2"
                     android:background="@null"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/diamonds2"
                     />
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:id="@+id/redcards"
+                    >
+                    <ImageButton
+                        android:id="@+id/redcard1"
+                        android:background="@null"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                    <ImageButton
+                        android:id="@+id/redcard2"
+                        android:background="@null"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                </LinearLayout>
             </LinearLayout>
         </TableRow>
     </TableLayout>

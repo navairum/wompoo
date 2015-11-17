@@ -13,7 +13,7 @@ public class GameBoard extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_board);
-        //((ImageView)findViewById(R.id.whitecard)).setImageResource(R.drawable.clubs1);
+        ((ImageView)findViewById(R.id.whitecard)).setImageResource(R.drawable.clubs1);
     }
 
     @Override
