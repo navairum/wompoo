@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 
 public class GameBoard extends ActionBarActivity {
@@ -12,6 +13,7 @@ public class GameBoard extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_board);
+        //((ImageView)findViewById(R.id.whitecard)).setImageResource(R.drawable.clubs1);
     }
 
     @Override
