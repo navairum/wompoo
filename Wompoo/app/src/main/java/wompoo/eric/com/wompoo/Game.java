@@ -1,6 +1,9 @@
 package wompoo.eric.com.wompoo;
 
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,7 +13,7 @@ import java.util.Random;
 /**
  * Created by Eric on 11/10/2015.
  */
-public class Game {
+public class Game extends AppCompatActivity{
     DeckOfCards deck;
     private int numPlayers;
     private List<Player> players;
@@ -18,7 +21,13 @@ public class Game {
     private int currentDealer;
     private int dealNumber;
 
-    public Game(int numPlayers, String playerNames[]) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_game_board);
+        ((ImageView)findViewById(R.id.whitecard1)).setImageResource(R.drawable.clubs1);
+        this.numPlayers = (getIntent().getExtras()).getInt("numPlayers");
+        this.playerNames = (getIntent().getExtras()).getStringArray("playerNames");
         DeckOfCards deck = new DeckOfCards();
         this.numPlayers = numPlayers;
         this.deck = deck;
@@ -26,7 +35,12 @@ public class Game {
         this.currentDealer = 1;
         setupGame();
         debug();
+        List<Player> playerList = new ArrayList<Player>();
     }
+
+   /* public Game(int numPlayers, String playerNames[]) {
+
+    }*/
 
     public void debug(){
         for(int i =0; i<numPlayers; i++){
@@ -72,6 +86,8 @@ public class Game {
                 cards.add(this.deck.getCard());  //getCard function should remove that card from the deck. TODO verify the card gets removed from deck and added to players hand
             }
             player.setCards(cards);
+
+
         }
         this.dealNumber++;
 
@@ -98,6 +114,7 @@ public class Game {
             } else {
                 player.setTeamId(2);
             }
+            //Block just sets the initial peg positions for the players on the board.  3 in the 'barracks' and 1 guy out.
             switch(i){
                 case 0: //top right player - in our case black
                     player.setPegPositions(new int[]{1,0,0,0});

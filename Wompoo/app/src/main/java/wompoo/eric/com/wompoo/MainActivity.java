@@ -28,9 +28,8 @@ public class MainActivity extends ActionBarActivity {
                 // TODO Auto-generated method stub
                 int numPlayers = 4; //TODO change this to selectable value
                 String playerNames[] = {"Eric", "Weeks", "Dilello", "Duker"};
-                Game game = new Game(numPlayers, playerNames);
                 Intent intent = new Intent(getApplicationContext(),
-                        GameBoard.class);
+                        Game.class);
 
                 intent.putExtra("numPlayers",numPlayers);
                 intent.putExtra("playerNames",playerNames);

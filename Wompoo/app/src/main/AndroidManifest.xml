@@ -17,8 +17,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".GameBoard"
-            android:label="@string/title_activity_game_board"
+            android:name=".Game"
+
             >
         </activity>
     </application>
