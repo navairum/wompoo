@@ -29,9 +29,7 @@ public class Game extends AppCompatActivity{
         this.numPlayers = (getIntent().getExtras()).getInt("numPlayers");
         this.playerNames = (getIntent().getExtras()).getStringArray("playerNames");
         DeckOfCards deck = new DeckOfCards();
-        this.numPlayers = numPlayers;
         this.deck = deck;
-        this.playerNames = playerNames;
         this.currentDealer = 1;
         setupGame();
         debug();
