@@ -61,11 +61,11 @@ public class Game {
             int cardsToDeal = 0;
             List cards = new ArrayList<Card>();
             switch(this.dealNumber) {
-                case 3:
-                    cardsToDeal = 4;
+                case 1:
+                    cardsToDeal = 5;
                     break;
                 default:
-                    cardsToDeal = 5;
+                    cardsToDeal = 4;
                     break;
             }
             for(int i = 0; i< cardsToDeal; i++){
@@ -97,6 +97,20 @@ public class Game {
                 player.setTeamId(1);
             } else {
                 player.setTeamId(2);
+            }
+            switch(i){
+                case 0: //top right player - in our case black
+                    player.setPegPositions(new int[]{1,0,0,0});
+                    break;
+                case 1://bottom right player - in our case red
+                    player.setPegPositions(new int[]{17,0,0,0});
+                    break;
+                case 2: //bottom left player - in our case white
+                    player.setPegPositions(new int[]{34,0,0,0});
+                    break;
+                case 3://top left player - in our case blue
+                    player.setPegPositions(new int[]{51,0,0,0});
+                    break;
             }
             players.add(player);
         }

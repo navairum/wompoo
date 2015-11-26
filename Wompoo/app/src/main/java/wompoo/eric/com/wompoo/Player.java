@@ -12,10 +12,11 @@ public class Player {
     private int teamId;
     private List<Card> cards;
     private boolean isDealer;
+    private int[] pegPositions;
 
     public Player() {
         this.isDealer=false;
-
+        this.pegPositions = new int[]{0,0,0,0};
     }
     public void setIsDealer(boolean isDealer){
         this.isDealer = isDealer;
@@ -26,6 +27,14 @@ public class Player {
 
     public int getTeamId() {
         return this.teamId;
+    }
+
+    public void setPegPositions(int[] pegPositions){
+        this.pegPositions = pegPositions;
+    }
+
+    public int[] getPegPositions(){
+        return this.pegPositions;
     }
 
     public void setName(String name) {
