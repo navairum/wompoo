@@ -34,7 +34,7 @@ public class DeckOfCards {
 
             rank = i - offset;
             if(rank == 0){
-                rank = 13; //15 joker, 14 = ace, 13 king, 12 queen ,11 jack
+                rank = 13; //15 joker, , 13 king, 12 queen ,11 jack,1 = ace
             }
 
             Card card = new Card(suit,rank); //Instantiate a Card

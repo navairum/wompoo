@@ -82,6 +82,17 @@ public class Game extends AppCompatActivity{
             }
             for(int i = 0; i< cardsToDeal; i++){
                 cards.add(this.deck.getCard());  //getCard function should remove that card from the deck. TODO verify the card gets removed from deck and added to players hand
+                switch(player.getPlayerNumber()){
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+
+                }
             }
             player.setCards(cards);
 
