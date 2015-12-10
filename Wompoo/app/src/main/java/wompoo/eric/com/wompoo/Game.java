@@ -1,9 +1,14 @@
 package wompoo.eric.com.wompoo;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,7 +30,6 @@ public class Game extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_board);
-        ((ImageView)findViewById(R.id.whitecard1)).setImageResource(R.drawable.clubs1);
         this.numPlayers = (getIntent().getExtras()).getInt("numPlayers");
         this.playerNames = (getIntent().getExtras()).getStringArray("playerNames");
         DeckOfCards deck = new DeckOfCards();
@@ -82,25 +86,66 @@ public class Game extends AppCompatActivity{
             }
             for(int i = 0; i< cardsToDeal; i++){
                 cards.add(this.deck.getCard());  //getCard function should remove that card from the deck. TODO verify the card gets removed from deck and added to players hand
-                switch(player.getPlayerNumber()){
-                    case 0:
-                        break;
-                    case 1:
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-
-                }
             }
             player.setCards(cards);
-
-
         }
+        drawCards();
         this.dealNumber++;
-
     }
+
+    public void drawCards(){
+        int id =0;
+        for(Player player: players) {
+            ImageButton cardImageButton = new ImageButton(this);
+            RelativeLayout playerCardsLayout;
+            RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)cardImageButton.getLayoutParams();
+            switch (player.getPlayerNumber()) {
+                case 0: //black
+                    playerCardsLayout = (RelativeLayout) findViewById(R.id.blackcards);
+                    params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+                   // params.addRule(RelativeLayout.LEFT_OF, R.id.id_to_be_left_of);
+                    break;
+                case 1: //red
+                    playerCardsLayout = (RelativeLayout) findViewById(R.id.redcards);
+                    break;
+                case 2: //white
+                    playerCardsLayout = (RelativeLayout) findViewById(R.id.whitecards);
+                    break;
+                case 3: //blue
+                    playerCardsLayout = (RelativeLayout) findViewById(R.id.bluecards);
+                    break;
+                default:
+                    playerCardsLayout = null;
+            }
+            for(Card card:player.getCards()){
+                String suit = card.getSuit();
+                cardImageButton.setId(id);
+                int rank = card.getRank();
+                int imageResource =0;
+                if(rank == 15){
+                    imageResource = getResources().getIdentifier("joker", "drawable", getPackageName());
+                } else{
+                    imageResource = getResources().getIdentifier(suit.toLowerCase()+rank, "drawable", getPackageName());
+                }
+
+
+                cardImageButton.setImageResource(imageResource);
+                cardImageButton.setScaleType(ImageView.ScaleType.FIT_XY);
+                playerCardsLayout.addView(cardImageButton);
+                cardImageButton.getLayoutParams().height = 135;
+                cardImageButton.getLayoutParams().width = 105;
+                 /* replicate this image button here:
+                    <ImageButton
+                    android:id="@+id/bluecard1"
+                    android:background="@null"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                            />*/
+                id++;
+            }
+        }
+    }
+
     public int setInitialDealer(){
         Random rand = new Random();
         return (rand.nextInt(4)+1);
