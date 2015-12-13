@@ -132,8 +132,30 @@ public class Game extends AppCompatActivity{
                 Log.i("ERIC: player num:","player num: " + player.getPlayerNumber());
                 switch (player.getPlayerNumber()){
                     case 0: //black
+                        if(cardNumber==1){
+                            ((ImageButton)findViewById(R.id.blackcard1)).setImageResource(imageResource);
+                        } else if(cardNumber==2){
+                            ((ImageButton)findViewById(R.id.blackcard2)).setImageResource(imageResource);
+                        }else if(cardNumber==3){
+                            ((ImageButton)findViewById(R.id.blackcard3)).setImageResource(imageResource);
+                        }else if(cardNumber==4){
+                            ((ImageButton)findViewById(R.id.blackcard4)).setImageResource(imageResource);
+                        }else if(cardNumber==5){
+                            ((ImageButton)findViewById(R.id.blackcard5)).setImageResource(imageResource);
+                        }
                         break;
                     case 1: //red
+                        if(cardNumber==1){
+                            ((ImageButton)findViewById(R.id.redcard1)).setImageResource(imageResource);
+                        } else if(cardNumber==2){
+                            ((ImageButton)findViewById(R.id.redcard2)).setImageResource(imageResource);
+                        }else if(cardNumber==3){
+                            ((ImageButton)findViewById(R.id.redcard3)).setImageResource(imageResource);
+                        }else if(cardNumber==4){
+                            ((ImageButton)findViewById(R.id.redcard4)).setImageResource(imageResource);
+                        }else if(cardNumber==5){
+                            ((ImageButton)findViewById(R.id.redcard5)).setImageResource(imageResource);
+                        }
                         break;
                     case 2: //white
                         if(cardNumber==1){
