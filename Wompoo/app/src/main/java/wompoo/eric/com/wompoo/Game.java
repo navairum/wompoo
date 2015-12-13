@@ -1,6 +1,7 @@
 package wompoo.eric.com.wompoo;
 
 import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -94,16 +95,25 @@ public class Game extends AppCompatActivity{
     }
 
     public void drawCards(){
-        int id =0;
+        int id =4;
+        boolean firstCard = true;
+        int cardNumber =1;
+
         for(Player player: players) {
-            ImageButton cardImageButton = new ImageButton(this);
+            if(id == 4){
+                firstCard = true;
+            } else{
+                firstCard = false;
+            }
+           /* ImageButton cardImageButton = new ImageButton(this);
             RelativeLayout playerCardsLayout;
-            RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)cardImageButton.getLayoutParams();
+            RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)cardImageButton.getLayoutParams();*/
             switch (player.getPlayerNumber()) {
-                case 0: //black
+                /*case 0: //black
                     playerCardsLayout = (RelativeLayout) findViewById(R.id.blackcards);
-                    params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-                   // params.addRule(RelativeLayout.LEFT_OF, R.id.id_to_be_left_of);
+                    if(!firstCard) {
+                       // params.addRule(RelativeLayout.LEFT_OF, R.id.id_to_be_left_of);
+                    }
                     break;
                 case 1: //red
                     playerCardsLayout = (RelativeLayout) findViewById(R.id.redcards);
@@ -115,12 +125,18 @@ public class Game extends AppCompatActivity{
                     playerCardsLayout = (RelativeLayout) findViewById(R.id.bluecards);
                     break;
                 default:
-                    playerCardsLayout = null;
+                    playerCardsLayout = null;*/
             }
             for(Card card:player.getCards()){
-                String suit = card.getSuit();
-                cardImageButton.setId(id);
+
+               /* cardImageButton = new ImageButton(this);
+                if(firstCard){
+                    cardImageButton.setId(player.getPlayerNumber());
+                }else{
+                    cardImageButton.setId();
+                }*/
                 int rank = card.getRank();
+                String suit = card.getSuit();
                 int imageResource =0;
                 if(rank == 15){
                     imageResource = getResources().getIdentifier("joker", "drawable", getPackageName());
@@ -128,12 +144,35 @@ public class Game extends AppCompatActivity{
                     imageResource = getResources().getIdentifier(suit.toLowerCase()+rank, "drawable", getPackageName());
                 }
 
-
-                cardImageButton.setImageResource(imageResource);
+                switch (player.getPlayerNumber()){
+                    case 0: //black
+                        break;
+                    case 1: //red
+                        break;
+                    case 2: //white
+                        break;
+                    case 3: //blue
+                        if(cardNumber==1){
+                            ((ImageButton)findViewById(R.id.bluecard1)).setImageResource(imageResource);
+                        } else if(cardNumber==2){
+                            ((ImageButton)findViewById(R.id.bluecard2)).setImageResource(imageResource);
+                        }else if(cardNumber==3){
+                            ((ImageButton)findViewById(R.id.bluecard3)).setImageResource(imageResource);
+                        }else if(cardNumber==4){
+                            ((ImageButton)findViewById(R.id.bluecard4)).setImageResource(imageResource);
+                        }else if(cardNumber==5){
+                            ((ImageButton)findViewById(R.id.bluecard5)).setImageResource(imageResource);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                Log.i("ERIC: looping in card","ERIC: looping in card");
+                /*cardImageButton.setImageResource(imageResource);
                 cardImageButton.setScaleType(ImageView.ScaleType.FIT_XY);
                 playerCardsLayout.addView(cardImageButton);
                 cardImageButton.getLayoutParams().height = 135;
-                cardImageButton.getLayoutParams().width = 105;
+                cardImageButton.getLayoutParams().width = 105;*/
                  /* replicate this image button here:
                     <ImageButton
                     android:id="@+id/bluecard1"
@@ -141,7 +180,7 @@ public class Game extends AppCompatActivity{
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                             />*/
-                id++;
+                cardNumber++;
             }
         }
     }

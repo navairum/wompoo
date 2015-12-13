@@ -196,73 +196,33 @@
         >
 
     </RelativeLayout>
-   <!-- <TableLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        >
-        <TableRow
-            android:id="@+id/topRow"
-            android:layout_width="fill_parent"
-            android:layout_marginLeft="2dip"
-            android:layout_marginRight="2dip"
-            android:layout_marginBottom="4dip"
-            android:layout_marginTop="120dip"
-            android:gravity="center"
-            >
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:orientation="horizontal"
-                android:layout_height="wrap_content"
-                >
-                <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                    android:gravity="left"
-                android:id="@+id/bluecards"
-                >
 
-                </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="right"
-                android:id="@+id/blackcards"
-                >
-
-            </RelativeLayout>
-        </LinearLayout>
-        </TableRow>
-        <TableRow
-            android:id="@+id/bottomRow"
-            android:layout_width="fill_parent"
-
-            android:layout_marginLeft="2dip"
-            android:layout_marginRight="2dip"
-            android:layout_marginBottom="4dip"
-            android:gravity="center"
-            >
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                >
-                <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:id="@+id/whitecards"
-                >
-
-            </RelativeLayout>
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:id="@+id/redcards"
-                    >
-
-                </RelativeLayout>
-            </LinearLayout>
-        </TableRow>
-    </TableLayout>-->
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="85dp"
+        android:id="@+id/bluecard1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="85dp"
+        android:id="@+id/bluecard2"
+        android:layout_toLeftOf="@+id/bluecard1" />
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="85dp"
+        android:id="@+id/bluecard3"
+        android:layout_toLeftOf="@+id/bluecard2" />
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="85dp"
+        android:id="@+id/bluecard4"
+    android:layout_toLeftOf="@+id/bluecard3"/>
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="85dp"
+        android:id="@+id/bluecard5"
+        android:layout_toLeftOf="@+id/bluecard4" />
 
 </RelativeLayout>
