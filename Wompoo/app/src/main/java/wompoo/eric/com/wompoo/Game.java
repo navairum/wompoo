@@ -136,22 +136,28 @@ public class Game extends AppCompatActivity{
                     case 1: //red
                         break;
                     case 2: //white
+                        if(cardNumber==1){
+                            ((ImageButton)findViewById(R.id.whitecard1)).setImageResource(imageResource);
+                        } else if(cardNumber==2){
+                            ((ImageButton)findViewById(R.id.whitecard2)).setImageResource(imageResource);
+                        }else if(cardNumber==3){
+                            ((ImageButton)findViewById(R.id.whitecard3)).setImageResource(imageResource);
+                        }else if(cardNumber==4){
+                            ((ImageButton)findViewById(R.id.whitecard4)).setImageResource(imageResource);
+                        }else if(cardNumber==5){
+                            ((ImageButton)findViewById(R.id.whitecard5)).setImageResource(imageResource);
+                        }
                         break;
                     case 3: //blue
                         if(cardNumber==1){
-                            Log.i("ERIC: card:","ERIC: card 1");
                             ((ImageButton)findViewById(R.id.bluecard1)).setImageResource(imageResource);
                         } else if(cardNumber==2){
-                            Log.i("ERIC: card:","ERIC: card 2");
                             ((ImageButton)findViewById(R.id.bluecard2)).setImageResource(imageResource);
                         }else if(cardNumber==3){
-                            Log.i("ERIC: card:","ERIC: card 3");
                             ((ImageButton)findViewById(R.id.bluecard3)).setImageResource(imageResource);
                         }else if(cardNumber==4){
-                            Log.i("ERIC: card:","ERIC: card 4");
                             ((ImageButton)findViewById(R.id.bluecard4)).setImageResource(imageResource);
                         }else if(cardNumber==5){
-                            Log.i("ERIC: card:","ERIC: card 5");
                             ((ImageButton)findViewById(R.id.bluecard5)).setImageResource(imageResource);
                         }
                         break;
