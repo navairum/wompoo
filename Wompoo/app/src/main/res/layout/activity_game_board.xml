@@ -198,31 +198,40 @@
     </RelativeLayout>
 
     <ImageButton
-        android:layout_width="50dp"
+        android:layout_width="55dp"
         android:layout_height="85dp"
         android:id="@+id/bluecard1"
+        android:scaleType="centerCrop"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
     <ImageButton
-        android:layout_width="50dp"
+        android:layout_width="55dp"
         android:layout_height="85dp"
+        android:layout_marginLeft="-30dp"
         android:id="@+id/bluecard2"
-        android:layout_toLeftOf="@+id/bluecard1" />
+        android:scaleType="centerCrop"
+        android:layout_toRightOf="@+id/bluecard1" />
     <ImageButton
-        android:layout_width="50dp"
+        android:layout_width="55dp"
         android:layout_height="85dp"
+        android:layout_marginLeft="-30dp"
         android:id="@+id/bluecard3"
-        android:layout_toLeftOf="@+id/bluecard2" />
+        android:scaleType="centerCrop"
+        android:layout_toRightOf="@+id/bluecard2" />
     <ImageButton
-        android:layout_width="50dp"
+        android:layout_width="55dp"
         android:layout_height="85dp"
+        android:layout_marginLeft="-30dp"
         android:id="@+id/bluecard4"
-    android:layout_toLeftOf="@+id/bluecard3"/>
+        android:scaleType="centerCrop"
+        android:layout_toRightOf="@+id/bluecard3"/>
     <ImageButton
-        android:layout_width="50dp"
+        android:layout_width="55dp"
         android:layout_height="85dp"
+        android:layout_marginLeft="-30dp"
         android:id="@+id/bluecard5"
-        android:layout_toLeftOf="@+id/bluecard4" />
+        android:scaleType="centerCrop"
+        android:layout_toRightOf="@+id/bluecard4" />
 
 </RelativeLayout>

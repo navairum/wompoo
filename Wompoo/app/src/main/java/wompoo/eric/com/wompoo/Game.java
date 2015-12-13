@@ -97,9 +97,10 @@ public class Game extends AppCompatActivity{
     public void drawCards(){
         int id =4;
         boolean firstCard = true;
-        int cardNumber =1;
 
         for(Player player: players) {
+            int cardNumber =1;
+
             if(id == 4){
                 firstCard = true;
             } else{
@@ -108,26 +109,11 @@ public class Game extends AppCompatActivity{
            /* ImageButton cardImageButton = new ImageButton(this);
             RelativeLayout playerCardsLayout;
             RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)cardImageButton.getLayoutParams();*/
-            switch (player.getPlayerNumber()) {
-                /*case 0: //black
-                    playerCardsLayout = (RelativeLayout) findViewById(R.id.blackcards);
-                    if(!firstCard) {
-                       // params.addRule(RelativeLayout.LEFT_OF, R.id.id_to_be_left_of);
-                    }
-                    break;
-                case 1: //red
-                    playerCardsLayout = (RelativeLayout) findViewById(R.id.redcards);
-                    break;
-                case 2: //white
-                    playerCardsLayout = (RelativeLayout) findViewById(R.id.whitecards);
-                    break;
-                case 3: //blue
-                    playerCardsLayout = (RelativeLayout) findViewById(R.id.bluecards);
-                    break;
-                default:
-                    playerCardsLayout = null;*/
-            }
-            for(Card card:player.getCards()){
+            List<Card> pCards = player.getCards();
+            Log.i("eric: ", "getCards size: " + pCards.size());
+            for(int i =0; i <pCards.size();i++){
+                Card card = pCards.get(i);
+                Log.i("ERIC","ERIC: in forloop=getCards()");
 
                /* cardImageButton = new ImageButton(this);
                 if(firstCard){
@@ -143,7 +129,7 @@ public class Game extends AppCompatActivity{
                 } else{
                     imageResource = getResources().getIdentifier(suit.toLowerCase()+rank, "drawable", getPackageName());
                 }
-
+                Log.i("ERIC: player num:","player num: " + player.getPlayerNumber());
                 switch (player.getPlayerNumber()){
                     case 0: //black
                         break;
@@ -153,14 +139,19 @@ public class Game extends AppCompatActivity{
                         break;
                     case 3: //blue
                         if(cardNumber==1){
+                            Log.i("ERIC: card:","ERIC: card 1");
                             ((ImageButton)findViewById(R.id.bluecard1)).setImageResource(imageResource);
                         } else if(cardNumber==2){
+                            Log.i("ERIC: card:","ERIC: card 2");
                             ((ImageButton)findViewById(R.id.bluecard2)).setImageResource(imageResource);
                         }else if(cardNumber==3){
+                            Log.i("ERIC: card:","ERIC: card 3");
                             ((ImageButton)findViewById(R.id.bluecard3)).setImageResource(imageResource);
                         }else if(cardNumber==4){
+                            Log.i("ERIC: card:","ERIC: card 4");
                             ((ImageButton)findViewById(R.id.bluecard4)).setImageResource(imageResource);
                         }else if(cardNumber==5){
+                            Log.i("ERIC: card:","ERIC: card 5");
                             ((ImageButton)findViewById(R.id.bluecard5)).setImageResource(imageResource);
                         }
                         break;
