@@ -5,11 +5,13 @@ import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,16 +37,86 @@ public class Game extends AppCompatActivity{
         this.playerNames = (getIntent().getExtras()).getStringArray("playerNames");
         DeckOfCards deck = new DeckOfCards();
         this.deck = deck;
-        this.currentDealer = 1;
         setupGame();
+        setupListeners();
         debug();
-        List<Player> playerList = new ArrayList<Player>();
     }
 
-   /* public Game(int numPlayers, String playerNames[]) {
 
-    }*/
+    public void setupListeners() {
+        int ids[] = {R.id.blackcard1, R.id.blackcard2, R.id.blackcard3, R.id.blackcard4, R.id.blackcard5,R.id.redcard1, R.id.redcard2, R.id.redcard3, R.id.redcard4, R.id.redcard5,R.id.whitecard1, R.id.whitecard2, R.id.whitecard3, R.id.whitecard4, R.id.whitecard5,R.id.bluecard1, R.id.bluecard2, R.id.bluecard3, R.id.bluecard4, R.id.bluecard5};
 
+        for (int i = 0; i < ids.length; i++) {
+            ((ImageButton) findViewById(ids[i])).setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    switch (v.getId()){
+                        case R.id.blackcard1:
+                            Toast.makeText(getApplicationContext(), "Black card1 pressed: ", Toast.LENGTH_LONG).show();
+                            break;
+                        case R.id.blackcard2:
+                            Toast.makeText(getApplicationContext(), "Black card2 pressed: ", Toast.LENGTH_LONG).show();
+                            break;
+                        case R.id.blackcard3:
+                            Toast.makeText(getApplicationContext(), "Black card3 pressed: ", Toast.LENGTH_LONG).show();
+                            break;
+                        case R.id.blackcard4:
+                            Toast.makeText(getApplicationContext(), "Black card4 pressed: ", Toast.LENGTH_LONG).show();
+                            break;
+                        case R.id.blackcard5:
+                            Toast.makeText(getApplicationContext(), "Black card5 pressed: ", Toast.LENGTH_LONG).show();
+                            break;
+                        case R.id.bluecard1:
+                            Toast.makeText(getApplicationContext(), "blue card1 pressed: ", Toast.LENGTH_LONG).show();
+                            break;
+                        case R.id.bluecard2:
+                            Toast.makeText(getApplicationContext(), "blue card2 pressed: ", Toast.LENGTH_LONG).show();
+                            break;
+                        case R.id.bluecard3:
+                            Toast.makeText(getApplicationContext(), "blue card3 pressed: ", Toast.LENGTH_LONG).show();
+                            break;
+                        case R.id.bluecard4:
+                            Toast.makeText(getApplicationContext(), "blue card4 pressed: ", Toast.LENGTH_LONG).show();
+                            break;
+                        case R.id.bluecard5:
+                            Toast.makeText(getApplicationContext(), "blue card5 pressed: ", Toast.LENGTH_LONG).show();
+                            break;
+                        case R.id.redcard1:
+                            Toast.makeText(getApplicationContext(), "red card1 pressed: ", Toast.LENGTH_LONG).show();
+                            break;
+                        case R.id.redcard2:
+                            Toast.makeText(getApplicationContext(), "red card2 pressed: ", Toast.LENGTH_LONG).show();
+                            break;
+                        case R.id.redcard3:
+                            Toast.makeText(getApplicationContext(), "red card3 pressed: ", Toast.LENGTH_LONG).show();
+                            break;
+                        case R.id.redcard4:
+                            Toast.makeText(getApplicationContext(), "red card4 pressed: ", Toast.LENGTH_LONG).show();
+                            break;
+                        case R.id.redcard5:
+                            Toast.makeText(getApplicationContext(), "red card5 pressed: ", Toast.LENGTH_LONG).show();
+                            break;
+                        case R.id.whitecard1:
+                            Toast.makeText(getApplicationContext(), "white card1 pressed: ", Toast.LENGTH_LONG).show();
+                            break;
+                        case R.id.whitecard2:
+                            Toast.makeText(getApplicationContext(), "white card2 pressed: ", Toast.LENGTH_LONG).show();
+                            break;
+                        case R.id.whitecard3:
+                            Toast.makeText(getApplicationContext(), "white card3 pressed: ", Toast.LENGTH_LONG).show();
+                            break;
+                        case R.id.whitecard4:
+                            Toast.makeText(getApplicationContext(), "white card4 pressed: ", Toast.LENGTH_LONG).show();
+                            break;
+                        case R.id.whitecard5:
+                            Toast.makeText(getApplicationContext(), "white card5 pressed: ", Toast.LENGTH_LONG).show();
+                            break;
+                    }
+                }
+            });
+        }
+    }
     public void debug(){
         for(int i =0; i<numPlayers; i++){
             Log.i("DEBUG","name: " + this.players.get(i).getName());
